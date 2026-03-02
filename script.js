@@ -353,7 +353,7 @@ const staticSound = document.getElementById("static-sound");
 const allAudio = document.querySelectorAll("audio");
 
 
-const staticOverlay = document.querySelector(".background-video");
+const staticOverlays = document.querySelectorAll(".background-video");
 
 
 effectsButton.addEventListener("click", () => {
@@ -384,26 +384,22 @@ toggleAllSounds.addEventListener("change", () => {
 
 
 toggleStaticOverlay.addEventListener("change", () => {
-  if (toggleStaticOverlay.checked) {
-    staticOverlay.classList.remove("fade-out");
-
-
-    staticOverlay.style.display = "block";
-
-    requestAnimationFrame(() => {
-      staticOverlay.style.opacity = ".1";
-    });
-
-  } else {
-    staticOverlay.classList.add("fade-out");
-
-
-    setTimeout(() => {
-      if (!toggleStaticOverlay.checked) {
-        staticOverlay.style.display = "none";
-      }
-    }, 600);
-  }
+  staticOverlays.forEach(overlay => {
+    if (toggleStaticOverlay.checked) {
+      overlay.classList.remove("fade-out");
+      overlay.style.display = "block";
+      requestAnimationFrame(() => {
+        overlay.style.opacity = ".1";
+      });
+    } else {
+      overlay.classList.add("fade-out");
+      setTimeout(() => {
+        if (!toggleStaticOverlay.checked) {
+          overlay.style.display = "none";
+        }
+      }, 600);
+    }
+  });
 });
 
 
@@ -3725,10 +3721,6 @@ async function generatePDFFromUserStats(userStats, csvPath = "assets/sources.csv
 
 
 
-
-
-
-
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 //SURVEILLANCE DICTIONARY
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
@@ -3794,8 +3786,6 @@ async function loadSurveillerGlossary(csvPath = "assets/surveillers.csv") {
     return {};
   }
 }
-
-
 
 
 const pdf_embed = document.querySelector(".pdf-embed")
