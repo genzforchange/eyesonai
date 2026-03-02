@@ -1,0 +1,102 @@
+﻿Service,vague,question,page,Data Collected,Applicable Surveillers,Surveiller Count
+WhatsApp,,messagingApps,Online Media Surveillance & Sentiment Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Cobwebs Technologies,ShadowDragon",1
+SMS Texting,,messagingApps,Online Media Surveillance & Sentiment Analysis,,,1
+Telegram,,messagingApps,Online Media Surveillance & Sentiment Analysis,"Posts,Known Associates,Posts,Post Reactions,Images,Post Sentiment,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Dataminr,Fivecast,ShadowDragon",1
+Instagram,,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Post Geotag,Post Sentiment,Face,Posts,Name,Post Geotag,Profile Geotag,Known Associates,Posts,Post Reactions,Images,Post Sentiment,Geolocation,Social Media Activity,Posts,Post Reactions,Face,Metadata,Geolocation,Social Media Activity,Post Sentiment,Posts,Social Media Activity,Geolocation,Face,Metadata,Posts,Face,Audio,Social Media Activity,Metadata,Social Media Activity,Metadata,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Babel Street,Clearview AI,DigitalStakeout,Fivecast,PathAR,Terrogence,Tangles,Stellar Technologies,Sprinklr,ShadowDragon",1
+Twitter,,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Post Geotag,Post Sentiment,Face,Location,Known Associates,Post Geotag,Post Sentiment,Home Address,Posts,Post Sentiment,Posts,Posts,Name,Post Geotag,Profile Geotag,Known Associates,Posts,Post Reactions,Images,Post Sentiment,Geolocation,Social Media Activity,Posts,Post Reactions,Face,Metadata,Geolocation,Social Media Activity,Post Sentiment,Posts,Social Media Activity,Geolocation,Face,Metadata,Posts,Face,Audio,Social Media Activity,Metadata,Social Media Activity,Metadata,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Babel Street,Clearview AI,Cobwebs Technologies,CSRA Inc,Dataminr,DigitalStakeout,Fivecast,PathAR,Terrogence,Tangles,Stellar Technologies,Sprinklr,ShadowDragon",1
+Facebook,,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Post Geotag,Post Sentiment,Face,Home Address,Posts,Post Sentiment,Posts,Name,Post Geotag,Profile Geotag,Known Associates,Posts,Post Reactions,Images,Post Sentiment,Geolocation,Social Media Activity,Posts,Post Reactions,Face,Metadata,Geolocation,Social Media Activity,Post Sentiment,Posts,Social Media Activity,Geolocation,Face,Metadata,Posts,Face,Audio,Social Media Activity,Metadata,Social Media Activity,Metadata,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Babel Street,Clearview AI,Cobwebs Technologies,CSRA Inc,DigitalStakeout,Fivecast,PathAR,Terrogence,Tangles,Stellar Technologies,Sprinklr,ShadowDragon",1
+TikTok,,socialApps,Online Media Surveillance & Sentiment Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Ring,,universal,Facial Recognition & Behavior Monitoring,"Face,Camera Footage,Location,Audio,Vehicle Make & Model,License Plate,Location","Ring,Flock Safety",1
+ChatGPT,,chatbotUse,Online Media Surveillance & Sentiment Analysis,,,1
+Gemini,,chatbotUse,Online Media Surveillance & Sentiment Analysis,,,1
+Claude,,chatbotUse,Online Media Surveillance & Sentiment Analysis,,,1
+Grok,,chatbotUse,Online Media Surveillance & Sentiment Analysis,,,1
+YouTube,,socialApps,Online Media Surveillance & Sentiment Analysis,"Face,Search History,Posts,Name,Post Geotag,Profile Geotag,Emails,Websites Visited,Web Analytics,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Clearview AI,Blocksi,DigitalStakeout,Securly,ShadowDragon",1
+Venmo,,mobilePay,Online Media Surveillance & Sentiment Analysis,"Face,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Clearview AI,ShadowDragon",1
+LinkedIn,,socialApps,Online Media Surveillance & Sentiment Analysis,"Face,Home Address,Posts,Post Sentiment,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Clearview AI,CSRA Inc,ShadowDragon",1
+Gmail,,universal,Student Surveillance,"Emails,Emails","Bark,Blocksi",1
+Google Drive,,universal,Student Surveillance,"Images,Videos,Documents,Comments,Images,Videos,Documents,Comments","Bark,Blocksi",1
+Google Docs,,universal,Student Surveillance,"Images,Videos,Documents,Comments,Images,Videos,Documents,Comments","Bark,Blocksi",1
+Google Slides,,universal,Student Surveillance,"Images,Videos,Documents,Comments,Images,Videos,Documents,Comments","Bark,Blocksi",1
+Google Sheets,,universal,Student Surveillance,"Images,Videos,Documents,Comments,Images,Videos,Documents,Comments","Bark,Blocksi",1
+Google Chat,,universal,Student Surveillance,"Messages,Photos,Videos",Bark,1
+Google Chrome,,universal,Student Surveillance,"Search History,Pages Visited,Search History","Bark,Blocksi",1
+Outlook,,universal,Student Surveillance,"Emails,Location","Blocksi,Gravy Analytics",1
+Microsoft Office 365,,universal,Student Surveillance,"Images,Videos,Documents,Comments,Location","Blocksi,Gravy Analytics",1
+Press,,occupationPress,Employee Surveillance – Bossware,,Intelligo,1
+Reddit,,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Known Associates,Posts,Post Reactions,Images,Post Sentiment,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","DigitalStakeout,Fivecast,ShadowDragon",1
+Snap,,socialApps,Online Media Surveillance & Sentiment Analysis,Posts,Dataminr,1
+Flickr,,irrelevant,,"Posts,Name,Post Geotag,Profile Geotag",DigitalStakeout,1
+Tumblr,,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","DigitalStakeout,ShadowDragon",1
+WordPress,,irrelevant,,Posts,DigitalStakeout,1
+RiteAid,,stores,Facial Recognition & Behavior Monitoring,Face,FaceFirst,1
+4chan,,socialApps,Online Media Surveillance & Sentiment Analysis,"Known Associates,Posts,Post Reactions,Images,Post Sentiment",Fivecast,1
+Gab,,socialApps,Online Media Surveillance & Sentiment Analysis,"Known Associates,Posts,Post Reactions,Images,Post Sentiment",Fivecast,1
+Discord,,socialApps,Online Media Surveillance & Sentiment Analysis,"Known Associates,Posts,Post Reactions,Images,Post Sentiment,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Fivecast,ShadowDragon",1
+Kaiser Permanente,,insuranceKaiser,Predictive Analytics — Healthcare,"Vehicle Make & Model,License Plate,Location",Flock Safety,1
+FedEx,,stores,ALPR,,Flock Safety,1
+Lowes,,stores,ALPR,,Flock Safety,1
+Kroger,,stores,ALPR,,Flock Safety,1
+Home Depot,,stores,ALPR,,Flock Safety,1
+BeReal,,socialApps,Online Media Surveillance & Sentiment Analysis,"Location,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Gravy Analytics,ShadowDragon",1
+MyFitnessPal,,healthApps,Predictive Analytics — Healthcare,"Location,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Gravy Analytics,ShadowDragon",1
+Tinder,,datingApps,Facial Recognition & Behavior Monitoring,"Location,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Gravy Analytics,ShadowDragon",1
+Yahoo Mail,,universal,Facial Recognition & Behavior Monitoring,Location,Gravy Analytics,1
+Bitlife,,gamesApps,Facial Recognition & Behavior Monitoring,Location,Gravy Analytics,1
+UnitedHealth Group,,insuranceUnited,Predictive Analytics — Healthcare,"Diagnosis,Living Situation,Age,Gender,Physical Function,Admission Date,Diagnosis,Age,Living Situation,Physical Function","nH Predict,nH Predict",1
+Humana,,insuranceHumana,Predictive Analytics — Healthcare,"Diagnosis,Living Situation,Age,Gender,Physical Function,Admission Date,Diagnosis,Age,Living Situation,Physical Function","nH Predict,nH Predict",1
+Macy's,,stores,Facial Recognition & Behavior Monitoring,"Known Associates,Face,Actions",AnyVision,1
+Ford,,stores,Facial Recognition & Behavior Monitoring,"Known Associates,Face,Actions",AnyVision,1
+Muslim Pro,,religionApps,OSINT & Pattern of Life Analysis,,,1
+Salaat First,,religionApps,OSINT & Pattern of Life Analysis,,,1
+Amazon,,shoppingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Apple Music,,musicApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Bluesky,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Cash App,,mobilePay,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Duolingo,,learningApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+eBay,,shoppingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Etsy,,shoppingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+GitHub,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Glassdoor,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+GoFundMe,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Goodreads,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Indeed,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Linktree,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Medium,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Mercari,,shoppingApps,OSINT & Pattern of Life Analysis,,,1
+Minecraft,,gamesApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+OkCupid,,datingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Pandora,,musicApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+PayPal,,mobilePay,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Peloton,,healthApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Pinterest,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Poshmark,,shoppingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Roblox,,gamesApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Skype,,messagingApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Snapchat,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+SoundCloud,,musicApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Spotify,,musicApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Strava,,healthApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Substack,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Threads,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+TruthSocial,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Twitch,,socialApps,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Yelp,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+Zillow,,universal,OSINT & Pattern of Life Analysis,"Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records",ShadowDragon,1
+UnitedHealthcare ,,insuranceUnited,Predictive Analytics — Healthcare,,,1
+school-issued devices,checked,studentStatus,Student Surveillance,"Geolocation,Screen Activity,Web Analytics,Search History,Location,Emails,Documents,Screen Activity,Emails,Websites Visited,Web Analytics,Email Address,Name,Known Associates,Social Media Activity,Location,Geolocation,Browsing History,Search History,IP Address,Metadata,Public Records","Blocksi,GoGuardian,GoGuardian,Securly,ShadowDragon",1
+security cameras,checked,universal,ALPR,"Known Associates,Face,Actions,Face,Gender,Age,Clothing,License Plate,Vehicle Make & Model,Face,Vehicle Make & Model,Clothing","AnyVision,BriefCam,Vintra",1
+social media,checked,socialApps,Online Media Surveillance & Sentiment Analysis,"Posts,Location,Known Associates,Post Geotag,Post Sentiment,Posts,Location,Social Media Activity,Videos,Camera Footage,Audio,Vehicle Make & Model,Social Media Activity,Location,Geolocation,Face,Metadata,Geolocation,Social Media Activity,Post Sentiment,Posts,Social Media Activity,Geolocation,Face,Metadata,Posts,Face,Audio,Social Media Activity,Metadata,Phone Records,Court Records,Social Media Activity,Criminal Justice Data,Social Media Activity,Age,Race,Zip Code,Name,Home Address,Relatives' Phone Numbers,Social Media Activity,Known Associates,Post Sentiment","Cobwebs Technologies,Cobwebs Technologies,Dataminr,Intelligo,LexisNexis,Venntel,Veritone,Terrogence,Tangles,Stellar Technologies,Whooster,Zencity,ZeroFox",1
+pharmacies,checked,stores,Facial Recognition & Behavior Monitoring,Face,FaceFirst,1
+dollar stores,checked,stores,Facial Recognition & Behavior Monitoring,Face,FaceFirst,1
+grocery stores,checked,stores,Facial Recognition & Behavior Monitoring,Face,FaceFirst,1
+browser extensions,checked,universal,Student Surveillance,"Search History,Location,Emails,Documents,Screen Activity","GoGuardian,GoGuardian",1
+vehicles,checked,transitCar,ALPR,"Location,Location,Driving Speed,Vehicle Make & Model,License Plate,Face,License Plate,License Plate,Vehicle Make & Model,Face,License Plate,Biometric,License Plate,Location,Videos,Camera Footage,Audio,Vehicle Make & Model,Social Media Activity,Location,Geolocation,Face,Vehicle Make & Model,Clothing,Face,License Plate,Vehicle Make & Model,License Plate,Vehicle Make & Model,Vehicle Registrations,Location,Time of Activity,Frequent Activities,Frequented Locations","Fusus,Genetec,Ipsotek,LensLock,PlateSmart,Unisys,Utility,Veritone,Vintra,Verkada,Rekor",1
+flights,checked,transitFlights,Facial Recognition & Behavior Monitoring,,IDEMIA,1
+international travel,checked,transit,Facial Recognition & Behavior Monitoring,"Body Temperature,Face",NEC Corporation,1
+casinos,checked,universal,Facial Recognition & Behavior Monitoring,"Known Associates,Face,Actions",AnyVision,1
+reproductive health apps,checked,healthApps,Predictive Analytics — Healthcare,Location,Gravy Analytics,1
+Muslim prayer apps,checked,religionApps,Surveillance Advertising & Real Time Bidding,Geolocation,Outlogic,1
+Bible apps,checked,religionApps,Facial Recognition & Behavior Monitoring,Location,Gravy Analytics,1
+public records,checked,universal,,"Social Media Activity,Age,Race,Zip Code,Name,Home Address,Relatives' Phone Numbers,Social Media Activity,Known Associates,Post Sentiment","Zencity,ZeroFox",1
+work-issued devices,checked,occupation,Employee Surveillance – Bossware,"Device Activity,Screen Activity,Physical Function,Websites Visited,Face,Browsing History,Search History,Emails,Private Chats,Messages,Websites Visited,Keystrokes,Post Sentiment,Web Analytics,Geolocation,Device Information,Device Activity","RemoteDesk,Veriato",1
