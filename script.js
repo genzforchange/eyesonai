@@ -324,6 +324,9 @@ confirmGuideBtn.addEventListener("click", () => {
 
   includeReasoningInPdf = false;
 
+  const resultsHeader = document.querySelector("tspan.results-text-h");
+  if (resultsHeader) resultsHeader.textContent = "Unabridged Results";
+
   if (resultsScene) {
     resultsScene.scrollIntoView();
     setTimeout(() => { slideBackgroundDown(); }, 1000);
@@ -2181,7 +2184,7 @@ const spamNo = document.getElementById("spam-no");
 [spamYes, spamNo].forEach(button => {
   button.addEventListener("click", () => {
     markSceneComplete('computerScene', 'emailScene')
-
+    
 
     const isScam = button === spamYes;
     updateStatBlock("scamEmails", isScam);
@@ -2718,7 +2721,7 @@ async function generatePdfFromCsv(userStats, csvPath = 'assets/data.csv') {
     //assigning the header and naming the file
     let url = await createPdf(dictionary, {
       title: "EYES ON AI",
-      subtitle: includeReasoningInPdf ? "Your Personalized Results" : "Unabridged Version",
+      subtitle: includeReasoningInPdf ? "Your Personalized Results" : "Unabridged Results",
       logoImageBytes: logoBytes,
       filename: "eyes_on_ai_results.pdf",
       sectionsForPDF: sectionsForPDF,
@@ -2870,7 +2873,7 @@ async function createPdf(dictionary, options = {}) {
 
   const introText =
     options.introText ||
-    "Eyes on AI is a transparency initiative created by Gen-Z for Change that helps users understand how artificial intelligence systems collect, use, and share their data. Each section outlines who collects data, what data is gathered, and who ultimately uses that information.";
+    "Eyes on AI is a transparency initiative created by Gen-Z for Change that helps users understand how artificial intelligence systems collect, use, and share their data. Each section outlines what services collect data, what data is gathered, and who ultimately uses that information.\n\nWe also provide recommendations for how to protect yourself from these systems. However, these measures cannot fully prevent data collection, and many services offer limited or no meaningful options for increasing privacy or opting out of data use.";
 
   introY = drawWrappedText(
     introPage,
@@ -2918,8 +2921,16 @@ async function createPdf(dictionary, options = {}) {
   tocY -= 20;
 
   // TOC Entries
+  introPage.drawText("1. Start Here: Foundational Tools", {
+    x: margin + 10,
+    y: tocY,
+    size: tocFontSize,
+    font: normalFont,
+  });
+  tocY -= tocFontSize + 6;
+
   sections.forEach((section, index) => {
-    introPage.drawText(`${index + 1}. ${section.title}`, {
+    introPage.drawText(`${index + 2}. ${section.title}`, {
       x: margin + 10,
       y: tocY,
       size: tocFontSize,
@@ -2928,7 +2939,7 @@ async function createPdf(dictionary, options = {}) {
     tocY -= tocFontSize + 6;
   });
   if (hasGlossary) {
-    introPage.drawText(`${sections.length + 1}. Glossary`, {
+    introPage.drawText(`${sections.length + 2}. Glossary`, {
       x: margin + 10,
       y: tocY,
       size: tocFontSize,
@@ -2936,6 +2947,121 @@ async function createPdf(dictionary, options = {}) {
     });
     tocY -= tocFontSize + 6;
   }
+  // ========================================
+  // ===== START HERE: FOUNDATIONAL TOOLS ====
+  // ========================================
+
+  const foundationalTools = [
+    { title: "Glossary of Social Media Platforms", source: "American Academy of Pediatrics", description: "This glossary helps parents, educators, and other users understand the features and risks of major social media platforms. It clarifies terminology and platform functions, making it easier to assess privacy risks.", url: "https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/glossary-of-digital-media-platforms/" },
+    { title: "Privacy Not Included", source: "Mozilla Foundation", description: "Privacy Not Included reviews popular apps, smart devices, and digital products for privacy and security risks. It helps consumers make informed purchasing decisions by highlighting data collection practices, security flaws, and unclear privacy policies.", url: "https://www.mozillafoundation.org/en/privacynotincluded/" },
+    { title: "Terms of Service; Didn't Read (ToS;DR)", source: "Terms of Service; Didn't Read", description: "ToS;DR summarizes and grades website terms of service and privacy policies. Instead of reading dense legal agreements, users can quickly understand how a company handles their data and what rights they give up.", url: "https://tosdr.org/en" },
+    { title: "Privacy Reports", source: "Common Sense Media", description: "Privacy Reports analyzes popular apps and digital services, explaining what data is collected, how it is used, and whether it is shared. It's particularly helpful for families and educators evaluating apps for children and teens.", url: "https://privacy.commonsense.org/" },
+    { title: "Google Analytics Opt-Out Add-On", source: "Google", description: "This browser add-on prevents Google Analytics from collecting data about your visits to participating websites. It reduces behavioral tracking used for analytics and advertising insights.", url: "https://chromewebstore.google.com/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en&pli=1" },
+    { title: "How to Turn Off Google AI Overviews", source: "Wired", description: "This guide explains how to reduce or bypass AI-generated summaries in Google Search results.", url: "https://www.wired.com/story/how-to-hide-google-ai-overviews-from-your-search-results/" },
+    { title: "ToS;DR Browser Extension", source: "Terms of Service; Didn't Read", description: "ToS;DR's browser extension displays ratings and summaries when you visit supported websites. It provides real-time transparency, helping users evaluate privacy before interacting with a service.", url: "https://tosdr.org/en/sites/download" },
+    { title: "iPhone Location Services Guide", source: "Apple", description: "This page explains how to control which apps can access your location and when it can be accessed for Apple devices.", url: "https://support.apple.com/en-us/102647" },
+    { title: "Android Location Services Guide", source: "Google", description: "This page explains how to control which apps can access your location and when it can be accessed for Android devices.", url: "https://support.google.com/android/answer/6179507?hl=en" },
+    { title: "Your Online Choices", source: "European Interactive Digital Advertising Alliance", description: "Your Online Choices allows users to manage preferences for interest-based advertising across participating companies. It provides transparency and opt-out tools for targeted ads.", url: "https://youronlinechoices.eu/" },
+    { title: "Your Ad Choices (AboutAds)", source: "Digital Advertising Alliance", description: "Your Ad Choices lets users opt out of targeted advertising from participating ad networks. It explains how behavioral advertising works and offers centralized ad preference controls.", url: "https://optout.aboutads.info/?locale=en-US" },
+    { title: "How to Opt Out", source: "National Advertising Initiative", description: "How to Opt Out provides instructions for opting out of interest-based advertising from member companies. It helps users reduce targeted ads and better understand industry self-regulation mechanisms.", url: "https://thenai.org/how-to-opt-out/" },
+  ];
+
+  {
+    let ftPage = pdfDoc.addPage();
+    let { width: ftWidth, height: ftHeight } = ftPage.getSize();
+    let ftY = ftHeight - margin;
+
+    if (embeddedLogo) {
+      const logoDims = embeddedLogo.scale(0.1);
+      ftPage.drawImage(embeddedLogo, {
+        x: margin,
+        y: ftY - logoDims.height,
+        width: logoDims.width,
+        height: logoDims.height,
+      });
+    }
+    const ftTitle = options.title || "PDF Title";
+    const ftSubtitle = options.subtitle || "PDF Subtitle";
+    const ftTfs = 20;
+    const ftSfs = 12;
+    const ftTw = boldFont.widthOfTextAtSize(ftTitle, ftTfs);
+    const ftSw = normalFont.widthOfTextAtSize(ftSubtitle, ftSfs);
+    ftPage.drawText(ftTitle, { x: ftWidth - margin - ftTw, y: ftY - ftTfs, size: ftTfs, font: boldFont });
+    ftPage.drawText(ftSubtitle, { x: ftWidth - margin - ftSw, y: ftY - ftTfs - ftSfs - 5, size: ftSfs, font: normalFont, color: rgb(0.4, 0.4, 0.4) });
+    ftY -= headerHeight + 20;
+
+    ftPage.drawText("Start Here: Foundational Tools", {
+      x: margin,
+      y: ftY,
+      size: 20,
+      font: boldFont,
+    });
+    ftY -= 30;
+
+    ftPage.drawLine({
+      start: { x: margin, y: ftY + 10 },
+      end: { x: ftWidth - margin, y: ftY + 10 },
+      thickness: 1,
+      color: rgb(0.7, 0.7, 0.7),
+    });
+    ftY -= 10;
+
+    const ftAddPage = () => {
+      ftPage = pdfDoc.addPage();
+      const dims = ftPage.getSize();
+      ftY = dims.height - margin;
+      return ftPage;
+    };
+
+    const ftCheckPageBreak = (needed) => {
+      if (ftY - needed < 60) {
+        ftAddPage();
+      }
+    };
+
+    foundationalTools.forEach(tool => {
+      ftCheckPageBreak(50);
+      const titleText = `${tool.title} - ${tool.source}`;
+      const titleFontSize = 11;
+      const titleColor = rgb(0.2, 0.4, 0.8);
+      const titleWidth = boldFont.widthOfTextAtSize(titleText, titleFontSize);
+      ftPage.drawText(titleText, {
+        x: margin + 10,
+        y: ftY,
+        size: titleFontSize,
+        font: boldFont,
+        color: titleColor,
+      });
+      const annotDict = pdfDoc.context.obj({
+        Type: 'Annot',
+        Subtype: 'Link',
+        Rect: [margin + 10, ftY - 2, margin + 10 + titleWidth, ftY + titleFontSize],
+        Border: [0, 0, 0],
+        A: {
+          Type: 'Action',
+          S: 'URI',
+          URI: PDFLib.PDFString.of(tool.url),
+        },
+      });
+      const annotRef = pdfDoc.context.register(annotDict);
+      const existingAnnots = ftPage.node.get(PDFLib.PDFName.of('Annots'));
+      if (existingAnnots) {
+        existingAnnots.push(annotRef);
+      } else {
+        ftPage.node.set(PDFLib.PDFName.of('Annots'), pdfDoc.context.obj([annotRef]));
+      }
+      ftY -= 16;
+
+      const descResult = drawWrappedText(ftPage, normalFont, tool.description, margin + 10, ftY, ftWidth - margin * 2 - 10, 10, () => {
+        ftAddPage();
+        return { page: ftPage, cursorY: ftY };
+      });
+      ftY = descResult.cursorY;
+      ftPage = descResult.page;
+      ftY -= 8;
+    });
+  }
+
   // =========================
   // ===== SECTION PAGES =====
   // =========================
@@ -3201,7 +3327,62 @@ async function createPdf(dictionary, options = {}) {
           );
           cursorY = result.cursorY;
           page = result.page;
-          cursorY -= 5;
+
+          if (item.interventions && item.interventions.length > 0) {
+            cursorY -= 1;
+            checkPageBreak(20);
+            let linkX = margin + 20;
+            const linkFontSize = 9;
+            const linkColor = rgb(0.2, 0.4, 0.8);
+            item.interventions.forEach((intervention, idx) => {
+              const linkText = intervention.label;
+              const textWidth = normalFont.widthOfTextAtSize(linkText, linkFontSize);
+              if (linkX + textWidth > width - margin) {
+                cursorY -= linkFontSize + 4;
+                checkPageBreak(20);
+                linkX = margin + 20;
+              }
+              page.drawText(linkText, {
+                x: linkX,
+                y: cursorY,
+                size: linkFontSize,
+                font: normalFont,
+                color: linkColor,
+              });
+              const annotDict = pdfDoc.context.obj({
+                Type: 'Annot',
+                Subtype: 'Link',
+                Rect: [linkX, cursorY - 2, linkX + textWidth, cursorY + linkFontSize],
+                Border: [0, 0, 0],
+                A: {
+                  Type: 'Action',
+                  S: 'URI',
+                  URI: PDFLib.PDFString.of(intervention.url),
+                },
+              });
+              const annotRef = pdfDoc.context.register(annotDict);
+              const existingAnnots = page.node.get(PDFLib.PDFName.of('Annots'));
+              if (existingAnnots) {
+                existingAnnots.push(annotRef);
+              } else {
+                page.node.set(PDFLib.PDFName.of('Annots'), pdfDoc.context.obj([annotRef]));
+              }
+              linkX += textWidth;
+              if (idx < item.interventions.length - 1) {
+                page.drawText("  |  ", {
+                  x: linkX,
+                  y: cursorY,
+                  size: linkFontSize,
+                  font: normalFont,
+                  color: rgb(0.5, 0.5, 0.5),
+                });
+                linkX += normalFont.widthOfTextAtSize("  |  ", linkFontSize);
+              }
+            });
+            cursorY -= linkFontSize + 2;
+          }
+
+          cursorY -= 12;
         });
 
         cursorY -= 10;
@@ -3613,9 +3794,11 @@ async function generatePDFFromUserStats(userStats, csvPath = "assets/sources.csv
       }
     } else {
       if (!sectionsForPDF[sectionName].some(e => e.service === entry.service)) {
+        const uniqueData = [...new Set(entry.dataCollected.map(d => d.trim()).filter(Boolean))];
         sectionsForPDF[sectionName].push({
           service: entry.service,
-          dataCollected: entry.dataCollected.join(", ")
+          dataCollected: uniqueData.join(", "),
+          interventions: entry.interventions || []
         });
       }
     }
@@ -3721,6 +3904,10 @@ async function generatePDFFromUserStats(userStats, csvPath = "assets/sources.csv
 
 
 
+
+
+
+
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 //SURVEILLANCE DICTIONARY
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
@@ -3741,10 +3928,22 @@ async function loadSurveillanceSources(csvPath = "assets/sources.csv") {
     allData.forEach(item => {
       const questionKey = item.question || "unknown";
 
+      const interventions = [];
+      if (item.interventions) {
+        const parts = item.interventions.split(/,\s*(?=https?:\/\/)/);
+        parts.forEach(part => {
+          const match = part.trim().match(/^(https?:\/\/\S+)\s*\(([^)]+)\)$/);
+          if (match) {
+            interventions.push({ url: match[1], label: match[2].trim() });
+          }
+        });
+      }
+
       const entry = {
         service: item.Service,
         vague: item.vague || "",
         page: item.page || "",
+        interventions: interventions,
         dataCollected: item["Data Collected"]
           ? item["Data Collected"].split(",").map(c => c.trim())
           : [],
@@ -3786,6 +3985,13 @@ async function loadSurveillerGlossary(csvPath = "assets/surveillers.csv") {
     return {};
   }
 }
+
+
+
+
+
+
+
 
 
 const pdf_embed = document.querySelector(".pdf-embed")
