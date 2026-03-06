@@ -3494,6 +3494,28 @@ async function createPdf(dictionary, options = {}) {
         let match;
         const linkFontSize = 11;
         const maxLinkWidth = width - margin * 2 - 10;
+
+        const addUriAnnotation = (pg, x, y, w, h, url) => {
+          const annotDict = pdfDoc.context.obj({
+            Type: 'Annot',
+            Subtype: 'Link',
+            Rect: [x, y - 2, x + w, y + h],
+            Border: [0, 0, 0],
+            A: {
+              Type: 'Action',
+              S: 'URI',
+              URI: PDFLib.PDFString.of(url),
+            },
+          });
+          const annotRef = pdfDoc.context.register(annotDict);
+          const existingAnnots = pg.node.get(PDFLib.PDFName.of('Annots'));
+          if (existingAnnots) {
+            existingAnnots.push(annotRef);
+          } else {
+            pg.node.set(PDFLib.PDFName.of('Annots'), pdfDoc.context.obj([annotRef]));
+          }
+        };
+
         while ((match = regex.exec(f.value)) !== null) {
           checkPageBreak(20);
           const url = match[1];
@@ -3503,20 +3525,16 @@ async function createPdf(dictionary, options = {}) {
           if (textWidth > maxLinkWidth) {
             const words = displayText.split(" ");
             let line = "";
-            let firstLine = true;
+            let fullLinkStartY = cursorY;
+            let linkLines = [];
             for (const word of words) {
               const testLine = line + word + " ";
               if (normalFont.widthOfTextAtSize(testLine, linkFontSize) > maxLinkWidth && line) {
                 checkPageBreak(16);
                 const lineWidth = normalFont.widthOfTextAtSize(line.trim(), linkFontSize);
-                if (firstLine) {
-                  page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8), link: url });
-                  page.drawLine({ start: { x: margin + 10, y: cursorY - 2 }, end: { x: margin + 10 + lineWidth, y: cursorY - 2 }, thickness: 0.5, color: rgb(0, 0.2, 0.8) });
-                  firstLine = false;
-                } else {
-                  page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8) });
-                  page.drawLine({ start: { x: margin + 10, y: cursorY - 2 }, end: { x: margin + 10 + lineWidth, y: cursorY - 2 }, thickness: 0.5, color: rgb(0, 0.2, 0.8) });
-                }
+                page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8) });
+                page.drawLine({ start: { x: margin + 10, y: cursorY - 2 }, end: { x: margin + 10 + lineWidth, y: cursorY - 2 }, thickness: 0.5, color: rgb(0, 0.2, 0.8) });
+                linkLines.push({ page, x: margin + 10, y: cursorY, w: lineWidth });
                 cursorY -= linkFontSize + 3;
                 line = word + " ";
               } else {
@@ -3526,17 +3544,18 @@ async function createPdf(dictionary, options = {}) {
             if (line.trim()) {
               checkPageBreak(16);
               const lineWidth = normalFont.widthOfTextAtSize(line.trim(), linkFontSize);
-              if (firstLine) {
-                page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8), link: url });
-              } else {
-                page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8) });
-              }
+              page.drawText(line.trim(), { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8) });
               page.drawLine({ start: { x: margin + 10, y: cursorY - 2 }, end: { x: margin + 10 + lineWidth, y: cursorY - 2 }, thickness: 0.5, color: rgb(0, 0.2, 0.8) });
+              linkLines.push({ page, x: margin + 10, y: cursorY, w: lineWidth });
               cursorY -= linkFontSize + 5;
             }
+            linkLines.forEach(l => {
+              addUriAnnotation(l.page, l.x, l.y, l.w, linkFontSize, url);
+            });
           } else {
-            page.drawText(displayText, { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8), link: url });
+            page.drawText(displayText, { x: margin + 10, y: cursorY, size: linkFontSize, font: normalFont, color: rgb(0, 0.2, 0.8) });
             page.drawLine({ start: { x: margin + 10, y: cursorY - 2 }, end: { x: margin + 10 + textWidth, y: cursorY - 2 }, thickness: 0.5, color: rgb(0, 0.2, 0.8) });
+            addUriAnnotation(page, margin + 10, cursorY, textWidth, linkFontSize, url);
             cursorY -= linkFontSize + 5;
           }
         }
